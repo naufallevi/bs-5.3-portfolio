@@ -2,12 +2,16 @@
   --first-color: #E3FDFD;
 }
 
+section {
+  padding-top: 5rem;
+}
+
 .my-logo {
   width: 80px;
 }
 
 .hero {
-  padding-top: 2rem;
+  padding-top: 6rem;
   background-color: var(--first-color);
 }
 
@@ -17,4 +21,25 @@
 
 #projects {
   background-color: var(--first-color);
+}
+
+footer {
+  background-color: var(--first-color);
+}
+
+section h2 {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #53629E, #87BAC3);
+  border-radius: 2px;
 }
