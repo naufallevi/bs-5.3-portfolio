@@ -1,0 +1,20 @@
+:root {
+  --first-color: #E3FDFD;
+}
+
+.my-logo {
+  width: 80px;
+}
+
+.hero {
+  padding-top: 2rem;
+  background-color: var(--first-color);
+}
+
+.hero img {
+  width: 200px;
+}
+
+#projects {
+  background-color: var(--first-color);
+}
