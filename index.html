@@ -141,6 +141,14 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-md-6">
+          <div class="alert alert-success alert-dismissible fade show d-none form-alert-success" role="alert">
+            <strong>Pesan diterima ✔️</strong> terima kasih telah mengirimkan.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div class="alert alert-danger alert-dismissible fade show d-none form-alert-fail" role="alert">
+            <strong>Pesan tidak diterima ❌</strong> ada kesalahan dalam pengiriman
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
           <form name="naufallevi-contact-form-spreadsheet">
             <div class="mb-3">
               <label for="name" class="form-label">Fullname</label>
@@ -154,7 +162,11 @@
               <label for="messages" class="form-label">Messages</label>
               <textarea class="form-control rounded-3" name="messages" id="messages" rows="4"></textarea>
             </div>
-            <button type="submit" class="btn btn-dark d-block mx-auto">Submit</button>
+            <button type="submit" class="btn btn-dark d-block mx-auto btn-submit">Submit</button>
+            <button class="btn btn-dark d-block mx-auto d-none btn-loading" type="button" disabled>
+              <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+              <span role="status">Loading...</span>
+            </button>
           </form>
         </div>
       </div>
@@ -183,12 +195,36 @@
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbyvPU1oT55EBiEF4uebqUmGm4HtFoqTbJiuiTUtGti5zPJxtSAvTEBIQoxeq4HZgRIp/exec";
       const form = document.forms["naufallevi-contact-form-spreadsheet"];
+      const btnSubmit = document.querySelector(".btn-submit");
+      const btnLoading = document.querySelector(".btn-loading");
+      const formAlertSuccess = document.querySelector(".form-alert-success");
+      const formAlertFail = document.querySelector(".form-alert-fail");
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
+        btnLoading.classList.toggle("d-none");
+        btnSubmit.classList.toggle("d-none");
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => console.log("Success!", response))
-          .catch((error) => console.error("Error!", error.message));
+          .then((response) => {
+            btnLoading.classList.toggle("d-none");
+            btnSubmit.classList.toggle("d-none");
+            formAlertSuccess.classList.remove("d-none");
+            console.log("Success!", response);
+            setTimeout(() => {
+              formAlertSuccess.classList.add("d-none");
+            }, 10000);
+            form.reset();
+          })
+          .catch((error) => {
+            btnLoading.classList.toggle("d-none");
+            btnSubmit.classList.toggle("d-none");
+            formAlertFail.classList.remove("d-none");
+            console.error("Error!", error.message);
+            setTimeout(() => {
+              formAlertFail.classList.add("d-none");
+            }, 10000);
+            form.reset();
+          });
       });
     </script>
   </body>
