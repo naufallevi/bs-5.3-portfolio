@@ -4,15 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Naufallevi | Portfolio</title>
+    <!-- BOOTSTRAP 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- STYLE CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body id="home">
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="/images/logo-dark.png" alt="Naufallevi" class="my-logo" />
+          <img src="/images/logo-dark.png" alt="Naufallevi Logo" class="my-logo" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -31,8 +37,8 @@
 
     <!-- HERO -->
     <section class="hero text-center">
-      <img src="images/my-pict.png" alt="Naufallevi" class="img-thumbnail rounded-circle" />
-      <h1 class="display-5 fw-semibold">Muhammad Naufal Pahlevi</h1>
+      <img src="images/my-pict.png" alt="Naufallevi" class="img-thumbnail rounded-top-circle rounded-bottom-5" />
+      <h1 class="display-5 fw-semibold pt-2">Muhammad Naufal Pahlevi</h1>
       <p class="lead fs-4">Web Developer</p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
@@ -47,12 +53,12 @@
     <!-- ABOUT -->
     <section id="about">
       <div class="container">
-        <div class="row text-center m-3">
+        <div class="row text-center m-3" data-aos="zoom-in-up">
           <div class="col">
             <h2>About Me</h2>
           </div>
         </div>
-        <div class="row justify-content-center text-center fs-5">
+        <div class="row justify-content-center text-center fs-5" data-aos="fade-up">
           <div class="col-md-4">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda blanditiis iste architecto alias saepe tenetur reiciendis. Laudantium unde architecto quas?</p>
           </div>
@@ -74,13 +80,13 @@
     <!-- PROJECTS -->
     <section id="projects">
       <div class="container">
-        <div class="row text-center mb-3">
+        <div class="row text-center mb-3" data-aos="zoom-in-up">
           <div class="col">
             <h2>Projects</h2>
           </div>
         </div>
         <div class="row justify-content-center row-gap-3">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="zoom-out-right">
             <div class="card shadow border-0 rounded-4">
               <img src="images/projects/1.jpg" class="card-img-top rounded-top-4" alt="Project 1" />
               <div class="card-body">
@@ -88,7 +94,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="zoom-out-right" data-aos-delay="100">
             <div class="card shadow border-0 rounded-4">
               <img src="images/projects/2.jpg" class="card-img-top rounded-top-4" alt="Project 2" />
               <div class="card-body">
@@ -96,7 +102,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="zoom-out-right" data-aos-delay="200">
             <div class="card shadow border-0 rounded-4">
               <img src="images/projects/3.jpg" class="card-img-top rounded-top-4" alt="Project 3" />
               <div class="card-body">
@@ -104,7 +110,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="zoom-out-right" data-aos-delay="300">
             <div class="card shadow border-0 rounded-4">
               <img src="images/projects/4.jpg" class="card-img-top rounded-top-4" alt="Project 4" />
               <div class="card-body">
@@ -112,7 +118,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="zoom-out-right" data-aos-delay="400">
             <div class="card shadow border-0 rounded-4">
               <img src="images/projects/5.jpg" class="card-img-top rounded-top-4" alt="Project 5" />
               <div class="card-body">
@@ -134,40 +140,42 @@
 
     <!-- CONTACT -->
     <section id="contact">
-      <div class="row text-center mb-3">
-        <div class="col">
-          <h2>Contact</h2>
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Contact</h2>
+          </div>
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="alert alert-success alert-dismissible fade show d-none form-alert-success" role="alert">
-            <strong>Pesan diterima ✔️</strong> terima kasih telah mengirimkan.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="alert alert-success alert-dismissible fade show d-none form-alert-success" role="alert">
+              <strong>Pesan diterima ✔️</strong> terima kasih telah mengirimkan.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show d-none form-alert-fail" role="alert">
+              <strong>Pesan tidak diterima ❌</strong> ada kesalahan dalam pengiriman
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <form name="naufallevi-contact-form-spreadsheet">
+              <div class="mb-3">
+                <label for="name" class="form-label">Fullname</label>
+                <input type="text" class="form-control rounded-3" name="name" id="name" aria-describedby="name" />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control rounded-3" name="email" id="email" aria-describedby="email" />
+              </div>
+              <div class="mb-3">
+                <label for="messages" class="form-label">Messages</label>
+                <textarea class="form-control rounded-3" name="messages" id="messages" rows="4"></textarea>
+              </div>
+              <button type="submit" class="btn btn-dark d-block mx-auto btn-submit">Submit</button>
+              <button class="btn btn-dark d-block mx-auto d-none btn-loading" type="button" disabled>
+                <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+                <span role="status">Loading...</span>
+              </button>
+            </form>
           </div>
-          <div class="alert alert-danger alert-dismissible fade show d-none form-alert-fail" role="alert">
-            <strong>Pesan tidak diterima ❌</strong> ada kesalahan dalam pengiriman
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-          <form name="naufallevi-contact-form-spreadsheet">
-            <div class="mb-3">
-              <label for="name" class="form-label">Fullname</label>
-              <input type="text" class="form-control rounded-3" name="name" id="name" aria-describedby="name" />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control rounded-3" name="email" id="email" aria-describedby="email" />
-            </div>
-            <div class="mb-3">
-              <label for="messages" class="form-label">Messages</label>
-              <textarea class="form-control rounded-3" name="messages" id="messages" rows="4"></textarea>
-            </div>
-            <button type="submit" class="btn btn-dark d-block mx-auto btn-submit">Submit</button>
-            <button class="btn btn-dark d-block mx-auto d-none btn-loading" type="button" disabled>
-              <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
-              <span role="status">Loading...</span>
-            </button>
-          </form>
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -186,11 +194,14 @@
     </footer>
     <!-- FOOTER END -->
 
+    <!-- BOOTSTRAP 5.3 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
     <!-- YEAR BY JS -->
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+
     <!-- FORM SPREADSHEET -->
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbyvPU1oT55EBiEF4uebqUmGm4HtFoqTbJiuiTUtGti5zPJxtSAvTEBIQoxeq4HZgRIp/exec";
@@ -225,6 +236,14 @@
             }, 10000);
             form.reset();
           });
+      });
+    </script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true, // whether animation should happen only once - while scrolling down
+        duration: 500, // values from 0 to 3000, with step 50ms
       });
     </script>
   </body>

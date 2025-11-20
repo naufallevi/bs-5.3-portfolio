@@ -2,6 +2,10 @@
   --first-color: #E3FDFD;
 }
 
+nav {
+  background-color: var(--first-color);
+}
+
 section {
   padding-top: 5rem;
 }
@@ -16,7 +20,7 @@ section {
 }
 
 .hero img {
-  width: 200px;
+  width: 220px;
 }
 
 #projects {
