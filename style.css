@@ -2,6 +2,10 @@
   --first-color: #E3FDFD;
 }
 
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 nav {
   background-color: var(--first-color);
 }
@@ -25,6 +29,14 @@ section {
 
 #projects {
   background-color: var(--first-color);
+}
+
+.gallery-img {
+  width: 100%;
+}
+
+div.zero-padding>* {
+  padding: 0;
 }
 
 footer {

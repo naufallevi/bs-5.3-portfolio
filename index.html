@@ -10,6 +10,13 @@
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+
     <!-- STYLE CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -38,8 +45,8 @@
     <!-- HERO -->
     <section class="hero text-center">
       <img src="images/my-pict.png" alt="Naufallevi" class="img-thumbnail rounded-top-circle rounded-bottom-5" />
-      <h1 class="display-5 fw-semibold pt-2">Muhammad Naufal Pahlevi</h1>
-      <p class="lead fs-4">Web Developer</p>
+      <h1 class="display-5 fw-semibold pt-2"></h1>
+      <p class="lead fs-4"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -138,6 +145,50 @@
     </section>
     <!-- PROJECTS END -->
 
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Gallery</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center zero-padding">
+          <div class="col-md-3">
+            <a href="#"><img src="images/gallery/thumbnail/1.jpg" alt="Images 1" class="img-fluid gallery-img" /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"><img src="images/gallery/thumbnail/2.jpg" alt="Images 2" class="img-fluid gallery-img" /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"><img src="images/gallery/thumbnail/3.jpg" alt="Images 3" class="img-fluid gallery-img" /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"><img src="images/gallery/thumbnail/4.jpg" alt="Images 4" class="img-fluid gallery-img" /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"><img src="images/gallery/thumbnail/5.jpg" alt="Images 5" class="img-fluid gallery-img" /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"><img src="images/gallery/thumbnail/6.jpg" alt="Images 6" class="img-fluid gallery-img" /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"><img src="images/gallery/thumbnail/7.jpg" alt="Images 7" class="img-fluid gallery-img" /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"><img src="images/gallery/thumbnail/8.jpg" alt="Images 8" class="img-fluid gallery-img" /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"><img src="images/gallery/thumbnail/9.jpg" alt="Images 9" class="img-fluid gallery-img" /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"><img src="images/gallery/thumbnail/10.jpg" alt="Images 10" class="img-fluid gallery-img" /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- GALLERY END -->
+
     <!-- CONTACT -->
     <section id="contact">
       <div class="container">
@@ -202,6 +253,34 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      const galleryImage = document.querySelectorAll(".gallery-img");
+      galleryImage.forEach((img, i) => {
+        img.dataset.aos = "fade-down";
+        img.dataset.aosDelay = i * 100;
+        img.dataset.aosDuration = 1000;
+      });
+
+      AOS.init({
+        once: true, // whether animation should happen only once - while scrolling down
+        duration: 500, // values from 0 to 3000, with step 50ms
+      });
+    </script>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to(".hero h1", { duration: 2, text: "Muhammad Naufal Pahlevi", delay: 0.5, ease: "power1" });
+      gsap.to(".hero p", { duration: 2, text: "Web Developer | Informatics Engineer", delay: 2, ease: "power1" });
+      gsap.from(".my-logo", { duration: 2, opacity: 0, ease: "power1" });
+      gsap.from(".nav-link", { duration: 1, x: -100, opacity: 0, stagger: 0.3, ease: "power1" });
+      gsap.from(".hero img", { duration: 2, opacity: 0, delay: 0.5, ease: "power1" });
+    </script>
+
     <!-- FORM SPREADSHEET -->
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbyvPU1oT55EBiEF4uebqUmGm4HtFoqTbJiuiTUtGti5zPJxtSAvTEBIQoxeq4HZgRIp/exec";
@@ -236,14 +315,6 @@
             }, 10000);
             form.reset();
           });
-      });
-    </script>
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        once: true, // whether animation should happen only once - while scrolling down
-        duration: 500, // values from 0 to 3000, with step 50ms
       });
     </script>
   </body>
